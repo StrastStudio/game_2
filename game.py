@@ -13,13 +13,13 @@ def pause_toggle():
     else:
         set_status('ВПЕРЕД!')
 
-def key_handler(event):
-    # if event.keycode == KEY_UP:
-    #     menu_up()
-    # if event.keycode == KEY_DOWN:
-    #     menu_down()
-    # if event.keycode == KEY_ENTER:
-    #     menu_enter()
+def key_handler(event, menu_up, menu_down, menu_enter, menu_toggle, menu_mode):
+    if event.keycode == KEY_UP:
+        menu_up()
+    if event.keycode == KEY_DOWN:
+        menu_down()
+    if event.keycode == KEY_ENTER:
+        menu_enter()
 
     if game_over:
         return
@@ -30,11 +30,11 @@ def key_handler(event):
     if pause:
         return
     
-    # if event.keycode == KEY_ESC:
-    #     menu_toggle()
+    if event.keycode == KEY_ESC:
+        menu_toggle()
 
-    # if menu_mode:
-    #     return
+    if menu_mode:
+        return
 
     set_status('Вперед!')
     if event.keycode == KEY_PLAYER1:
